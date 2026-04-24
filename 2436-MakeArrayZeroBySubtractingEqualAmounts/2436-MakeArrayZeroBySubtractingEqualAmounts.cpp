@@ -1,0 +1,13 @@
+// Last updated: 4/24/2026, 10:06:32 PM
+class Solution {
+public:
+    int minimumOperations(vector<int>& nums) {
+        set<int> st;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]!=0){
+                st.insert(nums[i]);
+            }
+        }
+        return st.size();
+    }
+};
