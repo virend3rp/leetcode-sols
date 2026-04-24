@@ -1,0 +1,24 @@
+// Last updated: 4/24/2026, 10:08:47 PM
+class Solution {
+public:
+    int countGoodTriplets(vector<int>& arr, int a, int b, int c) {
+        int goodTriplets = 0;
+        int length = arr.size();
+
+        for (int i = 0; i < length; ++i) {
+            for (int j = i + 1; j < length; ++j) {
+                if (abs(arr[i] - arr[j]) <= a) {
+                    for (int k = j + 1; k < length; ++k) {
+                        if (abs(arr[j] - arr[k]) <= b &&
+                            abs(arr[i] - arr[k]) <= c) {
+                            goodTriplets++;
+                            // \U0001f94b Rock Lee: "The power of repetition is unmatched!" \U0001f501
+                        }
+                    }
+                }
+            }
+        }
+
+        return goodTriplets;
+    }
+};
